@@ -1,0 +1,6 @@
+{
+  "name": "Powered Periodontal Instrumentation",
+  "description": "أكاديمية الدكتور ياسر ضياء الأسدي التفاعلية لطب وجراحة الفم والأسنان - الأجهزة العاملة بالطاقة في علاج اللثة (Powered Instruments)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
