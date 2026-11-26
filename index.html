@@ -400,15 +400,15 @@
       display: block; pointer-events: none; z-index: 2;
     }
     .sim-3d-leaders { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; }
-    .sim-3d-pins { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 4; }
+    .sim-3d-pins { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 4; isolation: isolate; }
     .sim-3d-pin {
-      position: absolute; top: 0; left: 0; will-change: transform;
+      position: absolute; top: 0; left: 0;
       pointer-events: auto; cursor: pointer; opacity: 1;
       display: inline-flex; align-items: center; gap: 5px;
       padding: 3px 8px; border-radius: 6px; font-family: var(--font-ar); font-size: 0.66rem; font-weight: 800;
-      color: #F8FAFC; background: rgba(7, 15, 29, 0.90); border: 1px solid rgba(56, 189, 248, 0.68);
-      white-space: nowrap; direction: rtl; backdrop-filter: blur(6px);
-      box-shadow: 0 3px 10px rgba(0,0,0,0.48); transition: border-color 0.14s ease, background-color 0.14s ease, box-shadow 0.14s ease, opacity 0.2s ease;
+      color: #F8FAFC; background: rgba(7, 15, 29, 0.95); border: 1px solid rgba(56, 189, 248, 0.72);
+      white-space: nowrap; direction: rtl;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.48); transition: border-color 0.14s ease, background-color 0.14s ease, box-shadow 0.14s ease;
     }
     .sim-3d-pin-idx {
       display: inline-flex; align-items: center; justify-content: center;
@@ -424,13 +424,13 @@
     }
     .sim-3d-hud-rtl {
       position: absolute; top: 10px; right: 12px; z-index: 6; pointer-events: none;
-      padding: 5px 11px; border-radius: 7px; background: rgba(9, 17, 30, 0.84); border: 1px solid rgba(255,255,255,0.16);
-      color: #CBD5E1; font-family: var(--font-ar); font-size: 0.72rem; font-weight: 700; direction: rtl; backdrop-filter: blur(6px);
+      padding: 5px 11px; border-radius: 7px; background: rgba(9, 17, 30, 0.92); border: 1px solid rgba(255,255,255,0.16);
+      color: #CBD5E1; font-family: var(--font-ar); font-size: 0.72rem; font-weight: 700; direction: rtl;
     }
     .sim-3d-hud-ltr {
       position: absolute; top: 10px; left: 12px; z-index: 6; pointer-events: none;
-      padding: 5px 11px; border-radius: 7px; background: rgba(13, 148, 136, 0.28); border: 1px solid rgba(94, 234, 212, 0.50);
-      color: #5EEAD4; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; direction: ltr; backdrop-filter: blur(6px);
+      padding: 5px 11px; border-radius: 7px; background: rgba(11, 61, 61, 0.90); border: 1px solid rgba(94, 234, 212, 0.50);
+      color: #5EEAD4; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; direction: ltr;
     }
     .sim-video-bar {
       position: absolute; left: 10px; right: 10px; bottom: 10px; z-index: 7;
@@ -787,7 +787,7 @@
                   </ol>`,
                 iqHtml: `<span class="iq-speaker-label">تخيل وياي مريض كاعد على كرسي العيادة وبحلگه كلس أصفر وبلاك جوا اللثة وأنت أخذت السكيلر الكهربائي بيدك حتى تفهمه من الصفر:</span>
                   <p>بالبداية شنو يعني <strong>Periodontal pocket (الجيب اللثوي)</strong>؟ تخيل قميص خياطته لازمة بالرقبة فاللثة الطبيعية هيج لازمة بالسن بس من يلتهب اللثة تنفصل شوية عن الجذر ويصير بينها وبين السن فراغ اسمه جيب تتجمع بيه الأوساخ. <mark class="hl-def" data-pair="1">فالأجهزة العاملة بالطاقة (Powered instruments) تستخدم اهتزازات طاقة سريعة كلش مو مثل الحك باليد حتى تفلّش القلح اليابس من سطح السن البرّاني وتنظف البيئة داخل الجيب اللثوي كلها</mark>.</p>
-                  <p>يعني شنو يسوي هذا الرأس المهتز (Vibrating tip) من يلامس سطح السن من برة؟ يسوي ثلاث شغلات واضحة حتى الطفل يفهمها: <mark class="hl-func" data-pair="2">1. يفلّش ويزيح القلح اليابس مثل التكلس مال الكتلي (Dislodge calculus)</mark> و <mark class="hl-func" data-pair="3">2. يفكك ويمزق طبقة البلاك اللزجة مال البكتيريا مثل الطحالب اللي تلزك عالصخر (Disrupt plaque biofilm)</mark> و <mark class="hl-func" data-pair="4">3. يغسل بالماي ويطلّع البكتيريا برة الجيب اللثوي (Flush out bacteria)</mark>.</p>
+                  <p>يعني شنو يسوي هذا الرأس المهتز (Vibrating tip) من يلامس سطح السن من برة؟ <mark class="hl-func" data-pair="2">1. يفلّش ويزيح القلح اليابس مثل التكلس مال الكتلي (Dislodge calculus)</mark> و <mark class="hl-func" data-pair="3">2. يفكك ويمزق طبقة البلاك اللزجة مال البكتيريا مثل الطحالب اللي تلزك عالصخر (Disrupt plaque biofilm)</mark> و <mark class="hl-func" data-pair="4">3. يغسل بالماي ويطلّع البكتيريا برة الجيب اللثوي (Flush out bacteria)</mark>.</p>
                   <p>وهسه يجي السؤال اللي دايماً ينسأل بالعيادة والامتحان: زين السكيلر الكهربائي أقوى وأحسن بالتنظيف لو الأدوات اليدوية (Hand instruments مثل الكيوريت)؟ الجواب العلمي بسلايد 3 واضح: <mark class="hl-exam" data-pair="5">الأجهزة العاملة بالطاقة تطلع بنفس فعالية الأدوات اليدوية بالضبط (As effective as hand instrumentation)</mark> بثلاث نتايج هي <mark class="hl-class" data-pair="6">1. شيل ترسبات القلح</mark> و <mark class="hl-class" data-pair="7">2. السيطرة على البلاك اللي جوا اللثة (Subgingival يعني جوة حافة اللثة)</mark> و <mark class="hl-class" data-pair="8">3. تخفيف التهاب اللثة ونزفها</mark>.</p>`
               }
             ],
@@ -3196,41 +3196,44 @@
       },
 
       "p4-insert-parts": {
-        imgSrc: "src/assets/images/magnetostrictive_insert_parts_1795576995536.jpg",
+        imgSrc: "src/assets/images/cavitron_insert_single_1795702673299.jpg",
         duration: 8,
         scenarios: [
           {
             label: "1. تشريح أجزاء الـ Magnetostrictive Insert الخمسة",
             activePart: "oring",
-            focus: { cx: 50, cy: 52, scale: 1.12 },
-            seeIq: "قدامك الـ Insert كاملة من اليمين لليسار: (1) شرائح الـ Metal stack المعدنية و(2) الواشرة المطاطية السودا O-ring لمنع التسرب و(3) الـ Handle grip الفيروزي و(4) مخرج الماي المعدني و(5) الـ Working-end الرفيع",
+            focus: { cx: 50, cy: 51, scale: 1.08 },
+            seeIq: "قدامك الـ Insert كاملة بصورة حقيقية من اليمين لليسار: (1) شرائح الـ Metal stack المعدنية المصفحة المسطحة و(2) الواشرة المطاطية السودا O-ring لمنع التسرب و(3) الـ Handle grip الفيروزي و(4) فتحة مخرج الماي المدمجة بنفس أنبوب الـ Tip و(5) الـ Working-end المنحني",
             whyIq: "سؤال أجزاء الـ Insert الخمسة ووظيفة الـ O-ring يتكرر بالامتحانات مع خيارات 25-kHz و 30-kHz",
             tipIq: "5 Parts: 1. Metal stack + 2. O-ring + 3. Handle grip + 4. Water outlet + 5. Working-end"
           },
           {
             label: "2. شرائح المعدن وتطابق تردد 25-kHz / 30-kHz",
             activePart: "stack",
-            focus: { cx: 70, cy: 50, scale: 1.42 },
-            seeIq: "ركز على شرائح النيكل والحديد المصفحة (Laminated nickel-iron strips) باليمين — هذا الجزء هو اللي يفوت جوا القبضة ولازم يتطابق تردده ويا جهازك إما 25-kHz أو 30-kHz",
+            focus: { cx: 79, cy: 50, scale: 1.38 },
+            seeIq: "ركز على شرائح النيكل والحديد المصفحة المسطحة (Laminated nickel-iron strips) باليمين — هذا الجزء هو اللي يفوت جوا القبضة ولازم يتطابق تردده ويا جهازك إما 25-kHz أو 30-kHz",
             whyIq: "كل Insert لازم يتطابق تردده ويا جهاز المولد (25 أو 30 كيلوهرتز)",
             tipIq: "Magnetostrictive inserts: 25-kHz & 30-kHz options · Laminated nickel-iron stack"
           }
         ],
         parts: [
-          { key: "stack", en: "1. Metal Stack (Nickel-Iron)", ar: "1. حزمة المعدن (نيكل-حديد)", posPct: [81, 51], iq: "شرائح مصفحة من النيكل والحديد تنقل الاهتزاز وتتوفر بخياري 25-kHz و 30-kHz", clinical: "Component #1 (Slide 22)" },
-          { key: "oring", en: "2. O-Ring (Water Seal)", ar: "2. الواشرة O-ring المانعة للتسرب", posPct: [63, 51], iq: "حلقة مطاطية مثل واشرة البوري تمنع تسرب الماء برة الـ Handpiece", clinical: "Prevents water leakage" },
-          { key: "grip", en: "3. Handle Grip (Textured)", ar: "3. مقبض اليد المخشن", posPct: [42, 51], iq: "مقبض مريح ومخشن لثبات أصابع الطبيب أثناء الشغل بالماء", clinical: "Component #3" },
-          { key: "outlet", en: "4. Water Outlet & 5. Working-End", ar: "4. مخرج الماء و 5. الطرف العامل", posPct: [27, 63], iq: "بوري صغير يخرج الماء قرب الطرف العامل الرفيع المصمم بأشكال متعددة", clinical: "Components #4 & #5" },
-          { key: "tipEnd", en: "5. Working-End Curved Tip", ar: "5. الطرف العامل المنحني", posPct: [10, 53], iq: "الرأس العامل الرفيع بأشكال متنوعة يستلم تيار التبريد من مخرج الماء", clinical: "Component #5 (Slide 22)" }
+          { key: "stack", en: "1. Metal Stack (Nickel-Iron)", ar: "1. حزمة المعدن المصفحة (نيكل-حديد)", posPct: [86, 51], iq: "صفائح رقيقة مسطحة ومصفحة من النيكل والحديد تنقل الاهتزاز وتتوفر بخياري 25-kHz و 30-kHz", clinical: "Component #1 (Slide 22)" },
+          { key: "oring", en: "2. O-Ring (Water Seal)", ar: "2. الواشرة O-ring المانعة للتسرب", posPct: [70, 50], iq: "حلقة مطاطية سودا مثل واشرة البوري تمنع تسرب الماء برة الـ Handpiece", clinical: "Prevents water leakage" },
+          { key: "grip", en: "3. Handle Grip (Textured)", ar: "3. مقبض اليد المخشن", posPct: [52, 50], iq: "مقبض مريح ومخشن لثبات أصابع الطبيب أثناء الشغل بالماء", clinical: "Component #3" },
+          { key: "outlet", en: "4. Water Outlet (Integrated Port)", ar: "4. مخرج الماء بنفس الأنبوب", posPct: [17.5, 50], iq: "فتحة مخرج ماء مدمجة بنفس جسم أنبوب الطرف العامل تبخ تيار الماء مباشرة باتجاه الرأس", clinical: "Component #4 (Slide 22)" },
+          { key: "tipEnd", en: "5. Working-End Curved Tip", ar: "5. الطرف العامل المنحني", posPct: [4.8, 59.5], iq: "الرأس العامل الرفيع بأشكال متنوعة يستلم تيار التبريد مباشرة من فتحة مخرج الماء", clinical: "Component #5 (Slide 22)" }
         ],
         drawOverlay: function(ctx, w, h, t, st){
-          // Coolant stream exits metal water nozzle (26.5%, 65%) toward working tip (6%, 61%)
-          drawSprayStream(ctx, w * 0.265, h * 0.65, w * 0.055, h * 0.61, "#38BDF8", 12, t, 2.4);
+          // Coolant stream exits integrated water outlet port on the single tip (17.5%, 50%) toward curved tip end (4.5%, 60.5%)
+          drawSprayStream(ctx, w * 0.175, h * 0.50, w * 0.045, h * 0.605, "#38BDF8", 12, t, 2.4);
           if(st.scIdx === 1){
-            var s = Math.sin(t * 20) * 3;
+            var pulse = 0.55 + 0.3 * Math.sin(t * 2.5);
             ctx.save();
-            ctx.strokeStyle = "rgba(251,191,36,0.75)"; ctx.lineWidth = 2;
-            ctx.strokeRect(w * 0.68, h * 0.43 + s * 0.4, w * 0.25, h * 0.16);
+            ctx.strokeStyle = "rgba(251,191,36," + pulse.toFixed(2) + ")";
+            ctx.lineWidth = 2.2;
+            ctx.setLineDash([7, 4]);
+            ctx.lineDashOffset = -t * 14;
+            ctx.strokeRect(w * 0.755, h * 0.425, w * 0.212, h * 0.168);
             ctx.restore();
           }
         }
@@ -3841,6 +3844,7 @@
           pinsEl.style.display = "none"; leadersEl.style.display = "none"; return;
         }
         pinsEl.style.display = ""; leadersEl.style.display = "";
+        measurePins();
 
         var placed = [], dots = [], topGuard = 44, botGuard = 54, padX = 10;
         pinNodes.forEach(function(it, idx){
@@ -3848,13 +3852,13 @@
           var ax = (pct[0] / 100) * vw * st.curScale + curTx;
           var ay = (pct[1] / 100) * vh * st.curScale + curTy;
           var visible = (ax >= -16 && ax <= vw + 16 && ay >= -16 && ay <= vh + 16);
-          it.btn.style.opacity = visible ? "1" : "0.22";
-          it.shadowLine.setAttribute("opacity", visible ? "1" : "0.18");
-          it.line.setAttribute("opacity", visible ? "1" : "0.18");
-          it.originPip.setAttribute("opacity", visible ? "1" : "0.22");
-          it.halo.setAttribute("opacity", visible ? "1" : "0.14");
-          it.dot.setAttribute("opacity", visible ? "1" : "0.22");
-          it.ring.setAttribute("opacity", visible ? "1" : "0.18");
+          it.btn.style.opacity = "1";
+          it.shadowLine.setAttribute("opacity", visible ? "1" : "0.28");
+          it.line.setAttribute("opacity", visible ? "1" : "0.28");
+          it.originPip.setAttribute("opacity", visible ? "1" : "0.35");
+          it.halo.setAttribute("opacity", visible ? "1" : "0.18");
+          it.dot.setAttribute("opacity", visible ? "1" : "0.28");
+          it.ring.setAttribute("opacity", visible ? "1" : "0.22");
           dots.push({ ax: ax, ay: ay });
 
           // Push badges FAR OUT to left or right perimeter rail so anatomy stays 100% uncovered
@@ -3919,7 +3923,8 @@
         }
 
         placed.forEach(function(pl){
-          pl.item.btn.style.transform = "translate3d(" + pl.x.toFixed(1) + "px," + pl.y.toFixed(1) + "px,0)";
+          pl.item.btn.style.left = pl.x.toFixed(1) + "px";
+          pl.item.btn.style.top = pl.y.toFixed(1) + "px";
           var sx = pl.ax > (pl.x + pl.w * 0.5) ? (pl.x + pl.w + 1) : (pl.x - 1);
           var verticalExit = false;
           if(pl.ax >= pl.x && pl.ax <= pl.x + pl.w){
@@ -4144,6 +4149,13 @@
       document.addEventListener("visibilitychange", onVisChange);
 
       handleResize(); syncPlayUi(); applyScenario(0); drawAndLayout(0); ensureLoop();
+      if(document.fonts && document.fonts.ready){
+        document.fonts.ready.then(function(){
+          if(!alive) return;
+          measurePins();
+          layoutPinsAndLeaders();
+        });
+      }
 
       registerCleanup(function(){
         alive = false;
